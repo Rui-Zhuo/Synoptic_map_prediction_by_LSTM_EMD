@@ -1,8 +1,8 @@
 clear; close all;
-save_or_not = 1;
+save_or_not = 0;
 % cr_beg = 1642;
-cr_beg = 2259; %%%%% there is no data for CR2208 in WSO's web! %%%%%
-cr_end = 2271;
+cr_beg = 2272; %%%%% there is no data for CR2208 in WSO's web! %%%%%
+cr_end = 2287;
 for i_cr = cr_beg : cr_end
     %% STEP 1: import from original format
     store_dir = ('E:\Research\Data\WSO\download\txt\');

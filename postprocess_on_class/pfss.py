@@ -24,8 +24,8 @@ def set_axes_lims(ax):
 ###############################################################################
 # Step 1: import magnetogram
 # gong_fname = 'E:/Research/Program/SynopticMapPrediction/postprocess_on_class/neaten/cr2259_neaten.fits'
-# gong_fname = 'E:/Research/Data/GONG/fits/mrzqs_c2239.fits'
-gong_fname = 'E:/Research/Program/SynopticMapPrediction/determine_order/2239_WSO_9.fits'
+gong_fname = 'E:/Research/Data/GONG/mrzqs/fits/mrzqs_c2135.fits'
+# gong_fname = 'E:/Research/Program/SynopticMapPrediction/determine_order/2239_WSO_9.fits'
 
 gong_map = sunpy.map.Map(gong_fname)
 # Remove the mean, sothat curl B = 0; set colorbar to be symlog
@@ -88,16 +88,18 @@ ax.plot_coord(output.source_surface_pils[0])
 ax.set_title('Magnetic field on source surface @ 2.5 Rs')
 set_axes_lims(ax)
 
-plt.show()
+# plt.show()
 ###############################################################################
-# Step 5: plot PFSS solution in meridian plane (Figure 3)
+# Step 5.1: plot PFSS solution in meridian plane (Figure 3)
 fig, ax = plt.subplots()
 ax.set_aspect('equal')
 
 # Take 100 start points spaced equally in theta
 r = 1.01 * const.R_sun
-lon = np.pi / 2 * u.rad
-lat = np.linspace(-np.pi / 2, np.pi / 2, 20) * u.rad
+lon = np.linspace(np.pi / 2, np.pi * 3 / 2, 4)
+lat = np.linspace(-np.pi / 2, np.pi / 2, 50)
+lat, lon = np.meshgrid(lat, lon, indexing='ij')
+lat, lon = lat.ravel() * u.rad, lon.ravel() * u.rad
 seeds = SkyCoord(lon, lat, r, frame=output.coordinate_frame)
 
 tracer = pfsspy.tracing.PythonTracer()
@@ -111,12 +113,12 @@ for field_line in field_lines:
             coords.z / const.R_sun, color=color)
 
 # Add inner and outer boundary circles
-ax.add_patch(mpatch.Circle((0, 0), 1, color='k', fill=False))
+ax.add_patch(mpatch.Circle((0, 0), 1, color='gray', fill=True))
 ax.add_patch(mpatch.Circle((0, 0), input.grid.rss, color='k', linestyle='--',
                            fill=False))
 ax.set_title('PFSS solution')
 ###############################################################################
-# Step 6: plot PFSS solution in 3D (Figure 4)
+# Step 6: plot PFSS solution in 3D (Figure 5)
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ###############################################################################
@@ -141,3 +143,5 @@ for field_line in field_lines:
 
 ax.set_title('PFSS solution')
 plt.show()
+
+db
