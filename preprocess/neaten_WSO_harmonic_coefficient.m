@@ -1,3 +1,9 @@
+% NEATEN_WSO_HARMONIC_COEFFICIENT
+% Converts WSO coefficient downloads into per-rotation four-column tables (l, m, cosine
+% coefficient, sine coefficient). These tables supply the coefficient gathering and map
+% reconstruction steps.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 save_or_not = 1;

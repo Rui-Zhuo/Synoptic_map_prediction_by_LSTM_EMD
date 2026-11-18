@@ -1,3 +1,8 @@
+# Trains the main sunspot forecasting variant on the 13-month smoothed monthly series
+# using a 356-month input window. It forecasts 144 months recursively and can export the
+# four prediction segments for the MATLAB plotter.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import torch
 import torch.nn as nn
 import numpy as np

@@ -1,3 +1,9 @@
+% CALCULATE_MAGNETIC_FLUX_CONTRIBUTION_IN_AR
+% Explores the contribution of active-region fields to the harmonic representation of
+% solar magnetograms. It retains alternative region-selection methods and local helpers
+% for map reconstruction and magnetic-flux calculations.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 save_or_not = 0;

@@ -1,3 +1,9 @@
+% FINAL_PLOT_COEFFICIENT_PREDICTION
+% Builds a multi-panel summary of harmonic-coefficient forecasts from precomputed CSV
+% products. It is a publication plotting step and does not train the models that
+% produced those products.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 l = 5;

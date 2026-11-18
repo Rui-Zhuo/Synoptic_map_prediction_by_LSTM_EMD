@@ -1,3 +1,8 @@
+# Resolves shared paths and random-seed settings from defaults, an optional local file,
+# an explicit override file, and environment variables. Named paths under data/ and
+# outputs/ follow their corresponding configured roots.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 """Project configuration with repository-local defaults and optional overrides."""
 
 from __future__ import annotations

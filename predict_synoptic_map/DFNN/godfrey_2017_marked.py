@@ -1,3 +1,8 @@
+# Preserves an annotated version of the dense-network experiment and its custom loss.
+# The additional historical comments explain the prototype architecture and training
+# procedure.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 from typing import List, Tuple, Dict, Mapping, Any
 import torch
 import numpy as np

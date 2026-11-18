@@ -1,3 +1,9 @@
+% PLOT_SN_SERIES_COVER
+% Creates a presentation-style plot of historical and predicted sunspot numbers. It uses
+% stored forecast CSV files and the specifically named SILSO monthly files selected in
+% the script.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 %% import data

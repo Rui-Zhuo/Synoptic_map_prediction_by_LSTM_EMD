@@ -1,3 +1,8 @@
+# Explores a Transformer-style network using the configured sunspot series. Its
+# inherited day-prediction name and checkpoint format come from a prototype and should
+# not be interpreted as a validated daily solar forecast.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import torch                            # 导入神经网络框架Pytorch
 import numpy as np
 import pandas as pd

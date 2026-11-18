@@ -1,3 +1,8 @@
+# Tests an LSTM forecast after seasonal/trend preprocessing of the selected coefficient.
+# It retains experimental window lengths and checkpoint settings for comparison with the
+# EMD-LSTM method.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import torch
 import torch.nn as nn
 import numpy as np

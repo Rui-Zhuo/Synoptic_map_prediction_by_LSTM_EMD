@@ -1,3 +1,8 @@
+# Provides random-seed setup, centered smoothing, file checks, and min-max
+# normalization. Optional deep-learning imports allow the portable utilities to be used
+# with a smaller environment.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 """Small, dependency-light helpers shared by forecasting scripts."""
 
 from __future__ import annotations

@@ -1,3 +1,9 @@
+% PLOT_HISTOGRAM_OF_MAGNETOGRAMS
+% Compares field-value distributions in observed and reconstructed WSO/GONG magnetograms
+% for a selected rotation. It expects previously prepared MAT grids and converts WSO
+% field values to gauss for comparison.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 CR = 2097;

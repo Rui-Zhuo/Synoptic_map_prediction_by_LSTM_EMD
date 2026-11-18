@@ -1,3 +1,9 @@
+% PLOT_SOURCE_SURFACE_OF_DIFFERENT_ORDER
+% Compares precomputed PFSS source-surface maps from degree-five, degree-nine, and GONG
+% boundary conditions. It plots their spatial distributions and computes correlation
+% diagnostics for the truncation study.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 path = [fullfile(cfg.repo_root, 'determine_order'), filesep];

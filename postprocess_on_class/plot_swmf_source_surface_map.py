@@ -1,3 +1,8 @@
+# Compares externally produced SWMF source-surface grids with PFSS results from observed
+# GONG maps. It requires local simulation spreadsheets and produces comparison figures;
+# it does not run the SWMF simulation itself.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd

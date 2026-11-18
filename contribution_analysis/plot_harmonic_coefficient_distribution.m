@@ -1,3 +1,9 @@
+% PLOT_HARMONIC_COEFFICIENT_DISTRIBUTION
+% Visualizes the distribution and relative importance of spherical-harmonic
+% coefficients. It supplies supporting diagnostics for selecting a low-order
+% representation of the global solar field.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 save_or_not = 0;

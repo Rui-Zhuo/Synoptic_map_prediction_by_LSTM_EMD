@@ -1,3 +1,8 @@
+# Centralizes Carrington/year conversion constants, model-specific historical random
+# seeds, and PFSS defaults. The EMD-LSTM and original LSTM seeds are retained separately
+# from the configurable general seed.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 """Physical and numerical constants shared by the analysis scripts."""
 
 DEFAULT_RANDOM_SEED = 456

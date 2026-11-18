@@ -1,3 +1,8 @@
+# Trains a dense autoencoder on normalized 30-by-73 WSO maps and inspects
+# reconstructions and latent variables. This exploratory spatial compression model is
+# independent of the paper EMD-LSTM method.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 from keras.layers import Dense,Input
 import tensorflow
 from keras import Model

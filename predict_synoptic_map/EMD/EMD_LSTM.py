@@ -1,3 +1,9 @@
+# Decomposes one selected spherical-harmonic series into EMD components and trains a
+# separate PyTorch LSTM for each component. It sums their recursive forecasts and
+# optionally writes 150-rotation g_l_m.csv sequences; the default lm range selects only
+# one coefficient.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -19,6 +25,8 @@ from smp.utils import set_random_seed
 save_or_not = 0
 config = load_config()
 # lm = 1 # g30(9), g31(10), g3-3(15), g41(17), g5-2(29), g53(30), g5-3(31)
+# Four window lengths per signed-order coefficient: IMF1, IMF2, IMF3, residual.
+# Keep the table aligned with the columns of save_var (including l=0).
 look_back_mat = [60, 126, 50, 50,\
                  25, 97, 150, 120, \
                  25, 43, 50, 50, \
@@ -56,6 +64,8 @@ look_back_mat = [60, 126, 50, 50,\
                  25, 30, 119, 90, \
                  30, 141, 120, 87] # lm=0 ~ 35
 
+# Python uses zero-based coefficient columns; this default runs g_1_0 only.
+# For the full degree-five reconstruction, process columns 0 through 35.
 for lm in range(1,2):
     look_back_lst = look_back_mat[4*lm:4*lm+4]
 
@@ -69,6 +79,7 @@ for lm in range(1,2):
     data_str = scio.loadmat(file_dir)
     # data_mat = data_str['sn']
     data_mat = data_str['save_var']
+    # Rows 0/1 identify l and signed m; rows 2 onward sample consecutive CRs.
     data_lm = np.zeros((len(data_mat)-2,1))
     data0_t = np.array(range(0,len(data_mat)-2))
     cr_base = 1642
@@ -79,6 +90,8 @@ for lm in range(1,2):
         # data_lm[i] = data_mat[i][2]
         # data_lm[i] = data_mat[i]
     data = data_lm.flatten()
+    # Historical hindcast cutoff; set dev=0 for the full supplied record.
+    # When dev=0, replace data[:-dev] below with data ([:-0] is empty).
     dev = 141 # CR 2258 begins 2022:05:28, CR 2117 begins 2011:11:16
     data_raw = data
     data0_t = data0_t[:-dev]
@@ -156,6 +169,8 @@ for lm in range(1,2):
             set_random_seed(seed)
             
             IMF = pd.DataFrame(IMF)
+            # Historical convention: scaling fits the entire retained component.
+            # This is preserved; an independent benchmark should fit training only.
             scaler = MinMaxScaler(feature_range=(0, 1))
             IMF = scaler.fit_transform(IMF)
             
@@ -169,6 +184,8 @@ for lm in range(1,2):
             val_size = int(len(IMF_t) * 0.2)
             test_size = len(IMF_t) - train_size - val_size
             
+            # Validation/test inputs include preceding context for this LSTM's
+            # sequence-first layout; losses and plots select the trailing blocks.
             train_t, val_t, test_t = IMF_t[:train_size], \
                 IMF_t[:train_size+val_size], IMF_t
                 # IMF_t[train_size:train_size+val_size], IMF_t[train_size+val_size:]
@@ -257,6 +274,7 @@ for lm in range(1,2):
             
             # 加载最佳模型
             # model.load_state_dict(torch.load('best_model.pkl'))
+            # Retained behavior uses final weights, not the saved best checkpoint.
             
             # 测试模型
             model.eval()
@@ -284,6 +302,7 @@ for lm in range(1,2):
             future_t = np.array(range(0,future_step))
             future_predict = np.zeros((future_step,1))
             IMF_ext = IMF
+            # Recursive forecasting appends each output before the next step.
             for j in range(future_step):
                 IMFX_ext = create_future_inputs(IMF_ext, look_back)
                 IMFX_ext = IMFX_ext.reshape(-1,1,look_back)

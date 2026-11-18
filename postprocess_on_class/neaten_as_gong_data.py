@@ -1,3 +1,8 @@
+# Replaces a GONG template image with an interpolated WSO map and updates image-
+# statistics header fields. FITS writing is disabled by default, and time/rotation
+# metadata must be checked before exporting a new product.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io as scio

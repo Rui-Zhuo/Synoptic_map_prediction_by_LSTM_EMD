@@ -1,3 +1,8 @@
+# Trains a PyTorch LSTM on the unsmoothed sunspot-number MAT series and recursively
+# extends it by 120 samples. It uses a 359-sample input window and optionally exports
+# training, validation, test, and future predictions.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import torch
 import torch.nn as nn
 import numpy as np

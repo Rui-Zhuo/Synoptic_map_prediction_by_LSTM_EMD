@@ -1,3 +1,9 @@
+% INTERP_TO_GONG_GRID
+% Interpolates prepared WSO/predicted maps to a GONG-compatible grid. Its optional MAT
+% export is consumed by the FITS conversion workflow and requires checking the selected
+% rotation and orientation.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 save_or_not = 0;

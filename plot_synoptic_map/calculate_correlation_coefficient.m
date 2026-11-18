@@ -1,3 +1,9 @@
+% CALCULATE_CORRELATION_COEFFICIENT
+% Interpolates prepared prediction and observation grids onto a common longitude-
+% latitude grid. It computes correlation and a linear fit and displays scatter and two-
+% dimensional count distributions.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 cr = 2261;

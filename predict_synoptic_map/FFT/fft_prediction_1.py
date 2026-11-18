@@ -1,3 +1,8 @@
+# Extends a Fourier-based coefficient reconstruction over a 150-step future interval. It
+# supplies an experimental periodic baseline rather than the publication EMD-LSTM
+# forecast.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io as scio

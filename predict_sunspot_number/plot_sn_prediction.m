@@ -1,3 +1,9 @@
+% PLOT_SN_PREDICTION
+% Combines saved LSTM output segments with observed smoothed sunspot numbers to
+% visualize the forecast. Its dev setting selects the historical forecast case, and the
+% plot includes model-error diagnostics.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 

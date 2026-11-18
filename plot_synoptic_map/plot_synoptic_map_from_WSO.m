@@ -1,3 +1,9 @@
+% PLOT_SYNOPTIC_MAP_FROM_WSO
+% Plots observed WSO photospheric maps using the preprocessed field and coordinate
+% arrays. It optionally exports the selected rotation maps to the configured output
+% archive.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 save_or_not = 0;

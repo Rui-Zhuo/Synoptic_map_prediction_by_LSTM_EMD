@@ -1,3 +1,8 @@
+# Trains a coefficient LSTM with validation-based stopping and checkpoint restoration.
+# It provides a direct, non-EMD comparison and recursively forecasts 120 steps from a
+# 150-sample input window.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import torch
 import torch.nn as nn
 import numpy as np

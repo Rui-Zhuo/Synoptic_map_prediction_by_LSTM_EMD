@@ -1,3 +1,10 @@
+% PLOT_SYNOPTIC_MAP_FROM_HARMONIC_COEFFICIENT
+% Reconstructs planar and spherical radial-field maps from WSO, GONG, or predicted
+% harmonic coefficients. Set mode=2 and the desired rotation range for forecasts;
+% Schmidt semi-normalization and the retained WSO unit conversion are explicit in the
+% synthesis loop.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 save_or_not = 0;
@@ -20,7 +27,7 @@ if mode == 0 % for GONG: 2047-2268
 elseif mode == 1 % for WSO: 1642-2272
     store_dir = [cfg.paths.wso_harmonics, filesep];
 elseif mode == 2 % for predict: 2259-2408
-    store_dir = [fullfile(cfg.output_root, 'predict_SC25', 'harmonics'), filesep];
+    store_dir = [cfg.paths.predicted_harmonics, filesep];
 end
 save_dir = [fullfile(cfg.output_root, 'harmonics_map'), filesep];
 for cr = cr_beg : cr_end
@@ -48,6 +55,8 @@ for cr = cr_beg : cr_end
     for i_l = 0 : ord_max % order of harmonics
         if ismember(i_l,l_lst)
             % modified from 'sch' option of matlab legendre function
+            % WSO coefficients use Schmidt semi-normalized associated Legendre
+            % functions; g multiplies cos(m*phi), h multiplies sin(m*phi).
             P = legendre(i_l,cos(theta),'sch'); % /sqrt(2*pi);
             temp = (i_l + 1)*i_l/2 + 1;
             for i_m = 1 : i_l + 1 % degree of harmonics
@@ -67,7 +76,7 @@ for cr = cr_beg : cr_end
         end
     end
     if mode ~= 0
-        magneto = magneto / 100; % [G]
+        magneto = magneto / 100; % WSO microtesla to gauss: 100 uT = 1 G.
     end
     %% plot magnetogram in plane
     figure();

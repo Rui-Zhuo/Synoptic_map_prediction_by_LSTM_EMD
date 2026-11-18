@@ -1,3 +1,9 @@
+% MAGNETIC_INCLUDING_ANGLE
+% Compares magnetic-field directions in external SWMF outputs and OMNI observations near
+% Earth. It reads precomputed spreadsheets and plots directional diagnostics rather than
+% performing a solar-wind simulation.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 data_dir = [fullfile(cfg.repo_root, 'postprocess_on_class', 'earth_location'), filesep];

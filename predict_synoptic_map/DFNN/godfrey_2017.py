@@ -1,3 +1,8 @@
+# Implements a dense neural-network time-series experiment with custom training and
+# plotting helpers. It is retained as a comparison prototype and is separate from the
+# main recurrent forecasting workflow.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 from typing import List, Tuple, Dict, Mapping, Any
 import torch
 import numpy as np

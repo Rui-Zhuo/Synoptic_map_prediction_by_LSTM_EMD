@@ -1,3 +1,9 @@
+% PLOT_G_1_0_PREDICTION
+% Visualizes the axial-dipole coefficient forecast and its component prediction
+% segments. It uses existing CSV exports to compare the observed series with the model
+% output in a focused panel layout.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 cr_beg_WSO = 1642; cr_end_WSO = 2258;

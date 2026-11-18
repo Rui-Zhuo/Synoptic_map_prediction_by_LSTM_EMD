@@ -1,3 +1,9 @@
+% PLOT_SOLAR_WIND_PRESSURE_COVER
+% Plots the relationship between 27-day OMNI solar-wind pressure and smoothed sunspot
+% activity. It retains local calendar-conversion helpers and requires the dated SILSO
+% file selected in the script.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 style = 2;

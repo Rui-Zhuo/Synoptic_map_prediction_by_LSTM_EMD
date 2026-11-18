@@ -1,3 +1,8 @@
+# Implements an alternative coefficient LSTM using Keras and a short input window. It
+# visualizes fitted training/test behavior as a framework comparison to the PyTorch
+# scripts.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd

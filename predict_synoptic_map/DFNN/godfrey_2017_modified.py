@@ -1,3 +1,8 @@
+# Adapts the dense-network prototype to the configured sunspot-number MAT input. It
+# trains and plots a comparison model without participating in the harmonic-map
+# reconstruction chain.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 from typing import List, Tuple, Dict, Mapping, Any
 import torch
 import numpy as np

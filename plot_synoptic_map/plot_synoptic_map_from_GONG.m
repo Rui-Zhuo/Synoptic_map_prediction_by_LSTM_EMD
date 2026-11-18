@@ -1,3 +1,8 @@
+% PLOT_SYNOPTIC_MAP_FROM_GONG
+% Loads GONG FITS magnetograms and displays their radial-field distribution. It provides
+% observed-map context and optionally saves figures for the selected rotations.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 save_or_not = 0;

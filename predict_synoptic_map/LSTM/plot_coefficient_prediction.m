@@ -1,3 +1,9 @@
+% PLOT_COEFFICIENT_PREDICTION
+% Plots observed harmonic coefficients alongside stored model forecasts across multiple
+% panels. It expects the historical per-coefficient forecast exports and uses a
+% 150-rotation prediction interval.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 l = 5;

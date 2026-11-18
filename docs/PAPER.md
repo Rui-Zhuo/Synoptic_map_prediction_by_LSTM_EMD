@@ -1,16 +1,8 @@
-# Associated publication
+# Related publication
 
-Rui Zhuo, Jiansen He, Die Duan, Rong Lin, Ziqi Wu, Limei Yan, and Yong Wei,
-“Prediction of solar activities: Sunspot numbers and solar magnetic synoptic
-maps,” *Science China Earth Sciences*, vol. 67, pp. 2460–2477, 2024.
+Zhuo, Rui, et al. “Prediction of Solar Activities: Sunspot Numbers and Solar Magnetic Synoptic Maps.” *Science China Earth Sciences*, vol. 67, no. 8, 2024, pp. 2460–2477. https://doi.org/10.1007/s11430-023-1354-4.
 
-- Publisher page: <https://link.springer.com/article/10.1007/s11430-023-1354-4>
-- DOI: <https://doi.org/10.1007/s11430-023-1354-4>
-
-The local publication archive contains the publisher-formatted Version of
-Record. It is not included here because the article is subscription content and
-the publisher PDF does not carry an open-content licence. An author-accepted
-manuscript may be added only when its self-archiving terms have been verified.
+[English PDF](../paper/Zhuo_et_al_2024_SCES.pdf) · [Chinese PDF](../paper/Zhuo_et_al_2024_SSTe_CN.pdf) · [Publication provenance](../paper/README.md)
 
 ## BibTeX
 
@@ -21,8 +13,9 @@ manuscript may be added only when its self-archiving terms have been verified.
   journal = {Science China Earth Sciences},
   year    = {2024},
   volume  = {67},
+  number  = {8},
   pages   = {2460--2477},
   doi     = {10.1007/s11430-023-1354-4},
-  url     = {https://link.springer.com/article/10.1007/s11430-023-1354-4}
+  url     = {https://doi.org/10.1007/s11430-023-1354-4}
 }
 ```

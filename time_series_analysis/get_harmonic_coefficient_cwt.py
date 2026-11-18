@@ -1,3 +1,9 @@
+# Computes complex Morlet wavelet coefficients for selected harmonic time series with
+# PyWavelets. The default selection is l=0 and the historical export statements are
+# commented out, so select degrees and enable exports before using the MATLAB spectrum
+# plotter.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import numpy as np
 import pywt
 import matplotlib.pyplot as plt
@@ -15,7 +21,8 @@ def CWT(data,l,m,fs=1):
     # wavename = "cgau8"   # cgau8 小波
     # wavename = "morl"  # morlet 小波
     # wavename = "cmor"  # cmor 小波
-    wavename='cmorl1.5-1.0'
+    # PyWavelets spells the complex Morlet family 'cmor', without an 'l'.
+    wavename='cmor1.5-1.0'
     
     cr2year = CARRINGTON_ROTATIONS_PER_YEAR
     # totalscale = 256

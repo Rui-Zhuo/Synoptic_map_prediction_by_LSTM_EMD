@@ -1,3 +1,9 @@
+% NEATEN_SUNSPOT_NUMBER
+% Interpolates monthly SILSO records onto the Carrington-rotation sampling grid. It
+% exports ASCII/CSV products when enabled; the MAT inputs used by the sunspot models
+% must be prepared separately.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 save_or_not = 0;

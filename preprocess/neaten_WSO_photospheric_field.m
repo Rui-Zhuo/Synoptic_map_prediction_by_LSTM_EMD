@@ -1,3 +1,9 @@
+% NEATEN_WSO_PHOTOSPHERIC_FIELD
+% Parses downloaded WSO text maps into numeric radial-field grids and longitude/latitude
+% arrays. Edit the Carrington-rotation range and enable saving to populate the
+% configured WSO field directory.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 save_or_not = 0;

@@ -1,3 +1,8 @@
+# Computes a potential-field source-surface solution with pfsspy for a configured GONG
+# map. It displays source-surface polarity and traced field lines using 30 radial cells
+# and a source surface at 2.5 solar radii.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 from cProfile import label
 import astropy.constants as const
 import astropy.units as u
@@ -30,7 +35,7 @@ config = load_config()
 gong_fname = config.path("gong_mrzqs_fits") / "mrzqs_c2135.fits"
 
 gong_map = sunpy.map.Map(gong_fname)
-# Remove the mean, sothat curl B = 0; set colorbar to be symlog
+# Remove the mean radial flux to balance the boundary; PFSS assumes curl B = 0.
 norm = SymLogNorm(linthresh=5)
 gong_map = sunpy.map.Map(gong_map.data - np.mean(gong_map.data), gong_map.meta, plot_settings={'norm': norm})
 # Change limit of magnetogram colorbar

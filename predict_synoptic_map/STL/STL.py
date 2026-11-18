@@ -1,3 +1,8 @@
+# Displays an additive seasonal decomposition of a selected harmonic time series.
+# Despite the directory name, this script calls seasonal_decompose rather than the STL
+# estimator.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import statsmodels.api as sm
 import pandas as pd
 import numpy as np

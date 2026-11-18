@@ -1,3 +1,8 @@
+# Tests a standalone EMD-based extrapolation without the main LSTM component. It
+# evaluates a selected coefficient with several error metrics and plots a 150-step
+# experimental extension.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import numpy as np
 import matplotlib.pyplot as plt
 from PyEMD import EMD, EEMD, visualisation

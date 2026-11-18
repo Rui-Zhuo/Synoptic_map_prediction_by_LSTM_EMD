@@ -1,3 +1,8 @@
+# Performs a SARIMA parameter-search demonstration on a synthetic pulse sequence. It
+# does not read solar observations and is retained as an exploratory example rather than
+# a validated scientific baseline.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import matplotlib.pyplot as plt
 import pandas as pd
 from statsmodels.tsa.statespace.sarimax import SARIMAX

@@ -1,3 +1,8 @@
+# Preserves the original Transformer training experiment and checkpoint conventions. Its
+# external data contract is separate from the solar harmonic-coefficient forecast
+# inputs.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import torch                            # 导入神经网络框架Pytorch
 import numpy as np
 import pandas as pd

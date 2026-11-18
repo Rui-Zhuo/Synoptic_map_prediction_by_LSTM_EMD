@@ -22,3 +22,9 @@ checkpoints/
 Thumbs.db
 .idea/
 .vscode/
+
+# Publication preparation and new training runs
+tmp/
+*.pkl
+*.bmp
+*.egg-info/

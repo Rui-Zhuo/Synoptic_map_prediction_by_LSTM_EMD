@@ -1,3 +1,8 @@
+# Explores a Fourier representation of a selected coefficient using the gathered
+# harmonic matrix. It plots the resulting spectral reconstruction as a baseline
+# experiment.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import numpy as np
 import pandas as pd
 from scipy.fft import fft, ifft

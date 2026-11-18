@@ -1,3 +1,9 @@
+% PROJECT_CONFIG
+% Loads shared JSON defaults, local overrides, and the MATLAB data/output root
+% environment variables. It resolves named paths for MATLAB scripts so the local data
+% archive can remain outside the checkout.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 function cfg = project_config()
 %PROJECT_CONFIG Load repository paths shared by MATLAB scripts.
 

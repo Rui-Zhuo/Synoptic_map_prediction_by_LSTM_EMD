@@ -1,3 +1,8 @@
+# Explores a multi-output look-forward LSTM using the sunspot-number series. It uses a
+# shorter input window and a configurable forecast block, providing an experimental
+# alternative to the single-step recursive model.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import torch
 import torch.nn as nn
 import numpy as np

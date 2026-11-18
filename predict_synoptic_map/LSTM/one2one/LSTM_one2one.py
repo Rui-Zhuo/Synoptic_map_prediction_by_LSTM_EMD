@@ -1,3 +1,8 @@
+# Explores an LSTM relationship between interpolated sunspot and harmonic-coefficient
+# sequences. It requires both MAT products and restores a saved model before evaluating
+# the fitted mapping.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import torch
 import torch.nn as nn
 import numpy as np

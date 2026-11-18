@@ -1,7 +1,13 @@
+% COMPARE_COEFFICIENTS
+% Compares predicted harmonic tables with observations and a CR2258 persistence
+% baseline. It plots coefficient values and relative errors, using the same
+% predicted_harmonics directory as the reconstruction workflow.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 obs_path = [cfg.paths.wso_harmonics, filesep];
-pred_path = [fullfile(cfg.output_root, 'predict', 'harmonics'), filesep];
+pred_path = [cfg.paths.predicted_harmonics, filesep];
 cr = 2259;
 
 obs_data = load([obs_path, 'cr', num2str(cr), '.dat']);

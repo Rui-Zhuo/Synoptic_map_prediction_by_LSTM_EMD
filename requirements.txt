@@ -1,4 +1,5 @@
-# Reproducible environment used for the publication workflow.
+# Pinned reconstruction environment; the original 2024 training environment
+# was not archived. These versions are not a verified reproduction of the paper.
 # Python 3.10 or 3.11 is recommended.
 numpy==1.26.4
 pandas==2.2.3

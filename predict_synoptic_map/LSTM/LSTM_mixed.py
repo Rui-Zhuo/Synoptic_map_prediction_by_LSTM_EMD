@@ -1,3 +1,8 @@
+# Explores interpolation, smoothing, and LSTM fitting for a selected harmonic
+# coefficient. Its input window scales with the interpolation rate and its plotting and
+# checkpoint settings are intended for manual experiments.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import numpy as np 
 import pandas as pd 
 import matplotlib.pyplot as plt 

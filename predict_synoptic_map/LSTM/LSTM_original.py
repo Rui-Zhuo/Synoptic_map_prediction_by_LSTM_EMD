@@ -1,3 +1,8 @@
+# Preserves an early PyTorch coefficient-regression experiment with a two-sample look-
+# back. It illustrates sliding-window preparation and fitted predictions rather than the
+# final EMD-LSTM pipeline.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import numpy as np 
 import pandas as pd 
 import matplotlib.pyplot as plt 

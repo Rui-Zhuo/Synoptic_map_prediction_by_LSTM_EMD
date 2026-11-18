@@ -1,3 +1,9 @@
+% NEATEN_PREDICT_HARMONIC_COEFFICIENT
+% Collects the 36 signed-order coefficient forecasts through degree five into per-
+% rotation four-column harmonic tables. It now reads the configured model_output
+% directory and writes predicted_harmonics for reconstruction, starting at CR2259.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 save_or_not = 1;
@@ -8,7 +14,11 @@ hc_ori = importdata(ori_file);
 l_lst = hc_ori(1,:);
 m_lst = hc_ori(2,:);
 %% import predicted data
-pred_dir = [fullfile(cfg.output_root, 'EMD+LSTM', 'predict'), filesep];
+pred_dir = [cfg.paths.model_output, filesep];
+harmonics_dir = cfg.paths.predicted_harmonics;
+if save_or_not == 1 && ~isfolder(harmonics_dir)
+    mkdir(harmonics_dir);
+end
 future_step = 150;
 max_order = 5;
 hc_num = (max_order+1)^2;
@@ -42,7 +52,7 @@ for i_cr = 1 : future_step
             data_pred(i_row,4) = hc_sub(i_hc);
         end
     end
-    save_file = [pred_dir,'cr',num2str(2258+i_cr),'.dat'];
+    save_file = fullfile(harmonics_dir, ['cr',num2str(2258+i_cr),'.dat']);
     if save_or_not == 1
         save(save_file,'data_pred','-ascii');
     end

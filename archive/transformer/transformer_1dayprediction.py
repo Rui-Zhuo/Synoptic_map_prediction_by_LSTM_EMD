@@ -1,3 +1,8 @@
+# Preserves the original Transformer prototype using external multivariate five-minute
+# CSV inputs. It is archived for comparison and is not an entry point for the paper
+# results.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import torch                            # 导入神经网络框架Pytorch
 import numpy as np
 import pandas as pd

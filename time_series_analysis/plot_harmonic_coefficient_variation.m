@@ -1,3 +1,9 @@
+% PLOT_HARMONIC_COEFFICIENT_VARIATION
+% Plots harmonic time series, wavelet spectra, average spectra, and phase relationships
+% with sunspot activity. It consumes the gathered coefficient matrix and precomputed CWT
+% products, with solar-cycle colors and polarity-reversal markers.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 % select order

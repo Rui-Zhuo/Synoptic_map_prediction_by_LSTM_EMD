@@ -1,3 +1,9 @@
+% GATHER_HARMONIC_COEFFICIENTS
+% Assembles the per-rotation WSO tables into one time-series matrix, with degree and
+% signed azimuthal order in its first two rows. Saving now writes both the historical
+% ASCII table and the MAT file with the save_var key required by Python.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 save_or_not = 0;
@@ -51,5 +57,9 @@ save_var = [l_lst;m_lst;hc_mat];
 if save_or_not == 1
     save_file = [save_dir,'harmonic_coefficient_gathered.dat'];
     save(save_file,'save_var','-ascii');
+    % Python forecasting scripts load this matrix by the key 'save_var'.
+    mat_parent = fileparts(cfg.paths.harmonic_coefficients);
+    if ~isfolder(mat_parent), mkdir(mat_parent); end
+    save(cfg.paths.harmonic_coefficients, 'save_var');
     disp('Neaten WSO Harmonic Coefficients Successfully');
 end

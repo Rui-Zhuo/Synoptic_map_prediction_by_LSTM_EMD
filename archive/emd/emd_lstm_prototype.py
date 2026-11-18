@@ -1,3 +1,8 @@
+# Preserves the earlier EMD-LSTM copy previously named EMD_LSTM - 副本.py. It is retained
+# for provenance, with the maintained coefficient-specific workflow located in
+# predict_synoptic_map/EMD/EMD_LSTM.py.
+# Inputs and run settings: see README.md and docs/DATA.md.
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt

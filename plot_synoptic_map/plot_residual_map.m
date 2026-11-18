@@ -1,3 +1,8 @@
+% PLOT_RESIDUAL_MAP
+% Displays the difference between precomputed prediction and observation grids. It
+% requires exported numeric maps; rendered PNG images alone are insufficient inputs.
+% Inputs and run settings: see README.md and docs/DATA.md.
+
 clear; close all;
 cfg = project_config();
 path = [fullfile(cfg.output_root, 'predict_SC25', 'comparison'), filesep];
